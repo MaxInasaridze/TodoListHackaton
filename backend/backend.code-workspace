@@ -1,0 +1,40 @@
+{
+	"folders": [
+		{
+			"name": "backend",
+			"path": "."
+		},
+		{
+			"name": "node_modules",
+			"path": "../node_modules"
+		},
+		{
+			"name": "project-root",
+			"path": "../project-root"
+		},
+		{
+			"name": "backend",
+			"path": "../project-root/backend"
+		},
+		{
+			"name": "data",
+			"path": "../project-root/backend/data"
+		},
+		{
+			"name": "node_modules",
+			"path": "../project-root/backend/node_modules"
+		},
+		{
+			"name": "src",
+			"path": "../project-root/frontend/src"
+		},
+		{
+			"name": "api",
+			"path": "../project-root/frontend/src/api"
+		},
+		{
+			"name": "components",
+			"path": "../project-root/frontend/src/components"
+		}
+	]
+}
