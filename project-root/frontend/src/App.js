@@ -96,7 +96,7 @@ function App() {
                   className={`toggle-btn ${todo.completed ? "uncomplete" : "complete"}`}
                   onClick={() => toggleTodo(todo.id)}
                 >
-                  {todo.completed ? "Uncomplete" : "Complete"}
+                  {todo.completed ? "✓" : "✓"}
                 </button>
           
                 <button
