@@ -10,10 +10,10 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
 
-  // Load todos
+
   const fetchTodos = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/todos");
+      const res = await axios.get("http://localhost:1234/api/todos");
       setTodos(res.data);
     } catch (err) {
       toast.error("Failed to load todos 😭");
@@ -24,13 +24,13 @@ function App() {
     fetchTodos();
   }, []);
 
-  // Add todo
+
   const addTodo = async (e) => {
     e.preventDefault();
     if (!title.trim()) return toast.error("Enter a title!");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/todos", {
+      const res = await axios.post("http://localhost:1234/api/todos", {
         title,
       });
       setTodos([...todos, res.data]);
@@ -41,10 +41,10 @@ function App() {
     }
   };
 
-  // Delete todo
+ 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${id}`);
+      await axios.delete(`http://localhost:1234/api/todos/${id}`);
       setTodos(todos.filter((t) => t.id !== id));
       toast.info("Todo deleted 🗑️");
     } catch {
@@ -52,10 +52,10 @@ function App() {
     }
   };
 
-  // Toggle completed
+ 
   const toggleTodo = async (id) => {
     try {
-      const res = await axios.put(`http://localhost:5000/api/todos/${id}`);
+      const res = await axios.put(`http://localhost:1234/api/todos/${id}`);
       setTodos(todos.map((t) => (t.id === id ? res.data : t)));
     } catch {
       toast.error("Toggle failed 💀");
@@ -66,7 +66,7 @@ function App() {
     <div className="app">
       <h1>📝 Todo List</h1>
 
-      {/* Add Todo Form */}
+      
       <form onSubmit={addTodo} className="todo-form">
         <input
           type="text"
@@ -77,7 +77,7 @@ function App() {
         <button type="submit">Add</button>
       </form>
 
-      {/* Todo List */}
+      
       <ul className="todo-list">
         <AnimatePresence>
           {todos.map((todo) => (
