@@ -90,14 +90,14 @@ h1 {
   padding: 18px 20px;
   background: #f8f9fa;
   border-radius: 12px;
-  cursor: pointer;
   transition: all 0.3s ease;
   border: 2px solid transparent;
+  cursor: default; /* Changed from pointer since we have buttons now */
 }
 
 .todo-item:hover {
   background: #e9ecef;
-  transform: translateX(5px);
+  /* Removed transform since we're not clicking the whole item */
 }
 
 .todo-item span {
@@ -180,4 +180,41 @@ h1 {
   .todo-item {
     padding: 15px;
   }
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+}
+
+.toggle-btn.complete {
+  background: #28a745;
+  color: white;
+}
+
+.toggle-btn.complete:hover {
+  background: #218838;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+.toggle-btn.uncomplete {
+  background: #ffc107;
+  color: #333;
+}
+
+.toggle-btn.uncomplete:hover {
+  background: #e0a800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+}
+
+.toggle-btn:active {
+  transform: translateY(0);
 }

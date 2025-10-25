@@ -84,22 +84,28 @@ function App() {
             <motion.li
               key={todo.id}
               className={`todo-item ${todo.completed ? "done" : ""}`}
-              onClick={() => toggleTodo(todo.id)}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.2 }}
             >
               <span>{todo.title}</span>
-              <button
-                className="delete-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  deleteTodo(todo.id);
-                }}
-              >
-                <FaTrash />
-              </button>
+          
+              <div className="todo-actions">
+                <button
+                  className={`toggle-btn ${todo.completed ? "uncomplete" : "complete"}`}
+                  onClick={() => toggleTodo(todo.id)}
+                >
+                  {todo.completed ? "Uncomplete" : "Complete"}
+                </button>
+          
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteTodo(todo.id)}
+                >
+                  <FaTrash />
+                </button>
+              </div>
             </motion.li>
           ))}
         </AnimatePresence>
